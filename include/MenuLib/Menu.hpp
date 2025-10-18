@@ -1,20 +1,25 @@
 /*
- * Option.hpp
+ * Menu.hpp
  * Written By : Cameron Ross
  * Last Edit  : October 18, 2025
  */
-#ifndef OPTION_HPP
-#define OPTION_HPP
-
+#pragma once
+#include "Option.hpp"
 #include <functional>
 #include <string>
 
-struct Option
+class Menu
 {
-	// stores the name of the option
-	std::string label;
-	// stores the function the option will execute
-	std::function<void()> action;
-};
+public:
+	Menu(const std::string &, bool); // initializer
 
-#endif
+	// add an option to the menu
+	void addOption(const std::string &, std::function<void()>);
+	void display(); // funcion displays menu info
+	void run();     // display and take/validate input
+
+private:
+	std::string title;
+	std::vector<Option> options;
+	int numberOfOptions;
+};

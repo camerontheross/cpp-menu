@@ -3,7 +3,8 @@
  * Written By : Cameron Ross
  * Last Edit  : October 18, 2025
  */
-#include "../headers/Menu.hpp"
+#include <MenuLib/Menu.hpp>
+#include <iostream>
 
 Menu::Menu(const std::string &menuTitle, bool isMainMenu)
 {

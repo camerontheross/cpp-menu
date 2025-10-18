@@ -1,5 +1,5 @@
 CXX = g++
-CXXFLAGS = -Wall -Iinclude -std=c++17
+CXXFLAGS = -Wall -std=c++17 -Iinclude
 
 SRC_DIR = src
 OBJ_DIR = obj
@@ -7,7 +7,7 @@ INCLUDE_DIR = include
 TARGET = libcppmenu.a
 
 SOURCES = $(wildcard $(SRC_DIR)/*.cpp)
-OBJECTS = $(patsubst $(SRC_DIR/%.cpp, $(OBJ_DIR/%.o), $SOURCES))
+OBJECTS = $(patsubst $(SRC_DIR)/%.cpp, $(OBJ_DIR)/%.o, $(SOURCES))
 
 all: $(TARGET)
 
