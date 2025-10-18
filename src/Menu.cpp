@@ -40,7 +40,7 @@ void Menu::run()
 	std::cin >> choice;
 
 	bool validInput =
-	    !(std::cin.fail() || choice < 0 || choice > numberOfOptions);
+	    !(std::cin.fail() || choice < 0 || choice > numberOfOptions - 1);
 
 	if (!validInput)
 	{
@@ -48,8 +48,14 @@ void Menu::run()
 		std::cin.ignore(99999, '\n');
 		std::cout << "Invalid input.\n";
 	}
-
-	options[choice].action();
+	else if (choice == 0)
+	{
+		return;
+	}
+	else
+	{
+		options[choice].action();
+	}
 
 	run();
 }
