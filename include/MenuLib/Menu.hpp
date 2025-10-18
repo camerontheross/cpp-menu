@@ -6,7 +6,6 @@
 #pragma once
 #include "Option.hpp"
 #include <functional>
-#include <iostream>
 #include <string>
 
 class Menu
