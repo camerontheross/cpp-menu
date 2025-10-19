@@ -6,7 +6,9 @@
 #include <MenuLib/Menu.hpp>
 #include <iostream>
 
-Menu::Menu(const std::string &menuTitle, bool isMainMenu)
+using namespace MenuLib::Menu
+
+    Menu::Menu(const std::string &menuTitle, bool isMainMenu)
 {
 	title = menuTitle;
 
