@@ -8,6 +8,9 @@
 #include <functional>
 #include <string>
 
+namespace MenuLib
+{
+
 class Menu
 {
 public:
@@ -23,3 +26,5 @@ private:
 	std::vector<Option> options;
 	int numberOfOptions;
 };
+
+} // namespace MenuLib
