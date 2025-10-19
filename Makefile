@@ -21,6 +21,6 @@ $(OBJ_DIR):
 	mkdir -p $(OBJ_DIR)
 
 clean:
-	rm -f $(OBJ_DIR) $(TARGET)
+	rm -rf $(OBJ_DIR) $(TARGET)
 
 .PHONY: all clean
