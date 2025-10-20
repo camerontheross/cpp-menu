@@ -1,26 +1,23 @@
 CXX = g++
 CXXFLAGS = -Wall -std=c++17 -Iinclude
 
-SRC_DIR = src
-OBJ_DIR = obj
-INCLUDE_DIR = include
-TARGET = libcppmenu.a
+LIB_NAME = libcppmenu.a
 
-SOURCES = $(wildcard $(SRC_DIR)/*.cpp)
-OBJECTS = $(patsubst $(SRC_DIR)/%.cpp, $(OBJ_DIR)/%.o, $(SOURCES))
+SRC = Menu.cpp
+OBJ = $(SRC:.cpp=.o)
 
-all: $(TARGET)
+all : $(LIB_NAME)
 
-$(TARGET): $(OBJECTS)
+$(LIB_NAME): $(OBJ)
 	ar rcs $@ $^
 
-$(OBJ_DIR)/%.o: $(SRC_DIR)/%.cpp | $(OBJ_DIR)
+%.o: %.cpp
 	$(CXX) $(CXXFLAGS) -c $< -o $@
 
-$(OBJ_DIR):
-	mkdir -p $(OBJ_DIR)
-
+%.o: %.cpp
+	$(CXX) $(CXXFLAGS) -c $< -o $@
 clean:
-	rm -rf $(OBJ_DIR) $(TARGET)
+	rm -f $(OBJ) $(LIB_NAME)
 
-.PHONY: all clean
+.PHONY: all clean 
+
