@@ -8,7 +8,7 @@
 #include <functional>
 #include <string>
 
-namespace MenuLib
+namespace cppmenu
 {
 
 class Menu
@@ -27,4 +27,4 @@ private:
 	int numberOfOptions;
 };
 
-} // namespace MenuLib
+} // namespace cppmenu

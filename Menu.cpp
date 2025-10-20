@@ -3,10 +3,11 @@
  * Written By : Cameron Ross
  * Last Edit  : October 18, 2025
  */
-#include <MenuLib/Menu.hpp>
+#include "Menu.hpp"
 #include <iostream>
 
-using namespace MenuLib;
+namespace cppmenu
+{
 
 Menu::Menu(const std::string &menuTitle, bool isMainMenu)
 {
@@ -72,3 +73,4 @@ void Menu::addOption(const std::string &label, std::function<void()> action)
 
 	numberOfOptions = options.size();
 }
+} // namespace cppmenu
